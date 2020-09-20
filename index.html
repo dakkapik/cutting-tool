@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding:0;
+            overflow: hidden;
+        }
+        #pointTopLeft{
+            display: flex;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            background-color:blue;
+        }
+        #pointBottomLeft{
+            display: flex;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            background-color: red;
+        }
+        #pointBottomRight{
+            display: flex;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            background-color: green;
+        }
+        #pointTopRight{
+            display: flex;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            background-color: yellow;
+        }
+        #screen{
+            opacity:0.8;
+            background-color:#ccc;
+            position:fixed;
+            width:100%;
+            height:100%;
+            top:0px;
+            left:0px;
+            z-index:1000;
+            padding: 0;
+            display: inline-block;
+        }
+        #image{
+            position: absolute;
+            z-index: -1;
+            margin:0px
+        }
+        #container{
+            display: inline-block;
+            position: absolute;
+            margin: 0;
+            position: relative;
+            border: 5px solid black;
+            padding:0
+        }
+        #canvas{
+            padding:0;
+            border: 0;
+            margin: 0;
+            position: relative;
+            z-index: 20;
+            height:inherit;
+            width: inherit;
+        }
+        #points{
+            position: relative;
+            z-index: 40;
+            height: 30px;
+            width: 30px;
+        }
+        #HUD{
+           display: inline-block;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="screen">
+        
+        <div id="container">
+            
+            
+            <div id="pointTopLeft"><canvas id="points"></canvas></div>
+            <div id="pointBottomLeft"><canvas id="points"></canvas></div>
+            <div id="pointBottomRight"><canvas id="points"></canvas></div>
+            <div id="pointTopRight"><canvas id="points"></canvas></div>
+            <img id="image" src="/img/testImage.jpg" alt=""/>
+            <canvas id="canvas" ></canvas>
+            
+        </div>
+        <div id="HUD">
+            
+        <h3 id="output">mouse</h3>
+        <h3 id="topLeftPosition">topLeftPostion</h3>
+        <h3 id="bottomLeftPosition">bottomLeftPosition</h3>
+        <h3 id="bottomRightPosition">bottomRightPosition</h3>
+        <h3 id="topRightPosition">topRightPosition</h3>
+            <div id="HUD">
+                <h2>export values</h2>
+                <h3 id="topExport">topExport</h3>
+                <h3 id="leftExport">leftExport</h3>
+                <h3 id="widthExport">widthExport</h3>
+                <h3 id="heightExport">heightExport</h3>
+                <button id="exportButton">Export</button>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</body>
+<script defer src="cuttingTool.js"></script>
+</html>
